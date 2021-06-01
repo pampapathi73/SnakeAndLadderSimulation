@@ -41,7 +41,14 @@ namespace SnakesAndLadderGame
                     break;
 
                 case 2:
-                    position += droll;
+                    if ((position + droll) > Win_position)
+                    {
+                        position = Win_position;
+                    }
+                    else
+                    {
+                        position += droll;
+                    }
                     Console.WriteLine("Player moves ahead by : " + position);
                     break;
 
