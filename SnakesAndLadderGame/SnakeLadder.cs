@@ -9,7 +9,8 @@ namespace SnakesAndLadderGame
         public static int No_Play = 1;
         public static int Ladder = 2;
         public static int Snake = 3;
-
+        public static int Win_position = 100;
+        public static int Position_check = 0;
         public void snake()
         {
             int position = 0;
@@ -46,6 +47,10 @@ namespace SnakesAndLadderGame
 
                 case 3:
                     position -= droll;
+                    if ((position - droll) < Position_check)
+                    {
+                        position = Position_check;
+                    }
                     Console.WriteLine("Player moves behind by : " + position);
                     break;
                 default:
